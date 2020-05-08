@@ -1,5 +1,5 @@
 ## day7_ethereum-erc20
-well, the seminar already ended, all the work are at office workstation, just continue new, naming convention
+well, the seminar already ended, all the previous works are at office workstation, just continue with this naming convention for Work From Home task
 
 ## Disclaimer
 based on: 
