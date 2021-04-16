@@ -1,0 +1,20 @@
+version: "3"
+services:
+    ganache:
+        build: ./ganache
+        ports:
+            - "8545:8545"
+            
+    # dapp:
+    #     build: ./dapp
+    #     ports: 
+    #         - "4000:4000"
+    #     depends_on:
+    #         - ganache
+    
+    # dapp-front:
+    #     build: ./client
+    #     ports:
+    #         - "3000:3000"
+    #     depends_on:
+    #         - dapp
