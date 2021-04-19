@@ -16,3 +16,8 @@ Smart contract based on:
 
 ### API
 - web3.py(JSON-RPC) -> FastAPI
+
+### Microservices
+- Client
+    - create env
+    - update packages - `pip install -U pip setuptools wheel`
