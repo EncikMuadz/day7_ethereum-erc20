@@ -12,9 +12,17 @@ services:
     #     depends_on:
     #         - ganache
     
-    # dapp-front:
-    #     build: ./client
-    #     ports:
-    #         - "3000:3000"
+    dapp-front:
+        build: ./client
+        ports:
+            - "8501:8501"
+        networks:
+            - ethflow_blockchain
+        image: ethflow-front:latest
+        container_name: ethflow_front
     #     depends_on:
     #         - dapp
+
+networks:
+    ethflow_blockchain:
+        driver: bridge
