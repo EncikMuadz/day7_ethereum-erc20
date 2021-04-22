@@ -1,11 +1,11 @@
-FROM python:3.7
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-RUN pip install -U pip setuptools wheel
+COPY requirements.txt /app
 
-COPY requirements.txt .
+RUN pip install -U pip setuptools wheel \
+    && pip install -r requirements.txt \
+    && rm -rf /root/.cache/pip
 
-RUN pip install -r requirements.txt
-
-CMD ["python", "oracle.py"]
+COPY . /app
