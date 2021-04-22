@@ -4,25 +4,34 @@ services:
         build: ./ganache
         ports:
             - "8545:8545"
-            
-    # dapp:
-    #     build: ./dapp
-    #     ports: 
-    #         - "4000:4000"
-    #     depends_on:
-    #         - ganache
+        networks:
+            - ethflow
+    
+    dapp-back:
+        build: ./API
+        
+        command: uvicorn app:app --reload --workers 1 --host 0.0.0.0 --port 5005
+        
+        ports: 
+            - 5005:5005
+        networks:
+            - ethflow
+        image: ethflow-back:latest
+        container_name: ethflow_back
+        depends_on:
+            - ganache
     
     dapp-front:
         build: ./client
         ports:
             - "8501:8501"
         networks:
-            - ethflow_blockchain
+            - ethflow
         image: ethflow-front:latest
         container_name: ethflow_front
-    #     depends_on:
-    #         - dapp
+        depends_on:
+            - dapp-back
 
 networks:
-    ethflow_blockchain:
+    ethflow:
         driver: bridge
