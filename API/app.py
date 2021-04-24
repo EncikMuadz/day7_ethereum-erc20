@@ -17,5 +17,9 @@ async def block_number():
     return { 'data' : webthree.eth.blockNumber }
 
 @app.get('/api/eth/accounts/')
-async def block_number():
+async def known_accounts():
     return { 'data' : webthree.eth.accounts }
+
+@app.get('/api/eth/accounts/{account}')
+async def account_balance(account: str):
+    return { 'data' : webthree.eth.get_balance(account) }
