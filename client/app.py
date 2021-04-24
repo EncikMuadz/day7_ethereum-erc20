@@ -37,6 +37,21 @@ def accounts_known():
     
     st.write(resp_json)
 
+def accounts_balance():
+    st.write('Please Provide Wallet Address')
+
+    account = st.text_input('Provide wallet address here')
+
+    if account:
+        if st.button('Balance'):
+            endpoint = f'/api/eth/balance/{account}'
+    
+            resp = requests.get(url+endpoint)
+    
+            resp_json = resp.json()
+    
+            st.write(resp_json)
+
 def main():
     st.title('Twistcode - Ethflow')
     menu = [
@@ -50,6 +65,7 @@ def main():
         block_num()
     elif choice == 'Accounts':
         accounts_known()
+        accounts_balance()
     else:
         home()
 
