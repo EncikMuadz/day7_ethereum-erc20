@@ -21,3 +21,4 @@ Smart contract based on:
 - Client
     - create env
     - update packages - `pip install -U pip setuptools wheel`
+    - Update docs
