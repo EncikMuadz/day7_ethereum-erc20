@@ -22,3 +22,5 @@ Smart contract based on:
     - create env
     - update packages - `pip install -U pip setuptools wheel`
     - Update docs
+- Blob storage
+    - IPFS
