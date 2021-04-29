@@ -4,7 +4,8 @@ import requests
 
 st.write('Dapp App')
 
-url = "http://dapp-back:5005"
+url_web3 = "http://dapp-back:5005"
+url_ipfs = ""
 
 def home():
     ''' landing page untuk project'''
@@ -13,7 +14,7 @@ def home():
 def conn_status():
     endpoint = '/api/connection/status/'
     
-    resp = requests.get(url+endpoint)
+    resp = requests.get(url_web3+endpoint)
     
     resp_json = resp.json()
     
@@ -22,7 +23,7 @@ def conn_status():
 def block_num():
     endpoint = '/api/eth/block/number'
     
-    resp = requests.get(url+endpoint)
+    resp = requests.get(url_web3+endpoint)
     
     resp_json = resp.json()
     
@@ -31,7 +32,7 @@ def block_num():
 def accounts_known():
     endpoint = '/api/eth/accounts'
     
-    resp = requests.get(url+endpoint)
+    resp = requests.get(url_web3+endpoint)
     
     resp_json = resp.json()
     
@@ -46,7 +47,7 @@ def accounts_balance():
         if st.button('Balance'):
             endpoint = f'/api/eth/balance/{account}'
     
-            resp = requests.get(url+endpoint)
+            resp = requests.get(url_web3+endpoint)
     
             resp_json = resp.json()
     
@@ -57,7 +58,8 @@ def main():
     menu = [
         'Home', 
         'General',
-        'Accounts'
+        'Accounts',
+        'Certificates'
     ]
     choice = st.sidebar.selectbox('Menu', menu)
     if choice == 'General':
@@ -66,6 +68,8 @@ def main():
     elif choice == 'Accounts':
         accounts_known()
         accounts_balance()
+    elif choice == 'Certificates':
+        pass
     else:
         home()
 
