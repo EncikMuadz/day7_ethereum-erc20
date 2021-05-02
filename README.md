@@ -24,3 +24,7 @@ Smart contract based on:
     - Update docs
 - Blob storage
     - IPFS
+- Brownie templating
+- Reverse proxy
+- DapsNodeIo
+- Chainlink Node
