@@ -26,5 +26,9 @@ Smart contract based on:
     - IPFS
 - Brownie templating
 - Reverse proxy
-- DapsNodeIo
-- Chainlink Node
+- Blockchain node
+    - DapsNodeIo for production
+    - ganache/hardhat for development
+- Chainlink Node:
+    - Middleware between blockchain and external data
+    - geth
