@@ -23,7 +23,8 @@ Smart contract based on:
     - update packages - `pip install -U pip setuptools wheel`
     - Update docs
 - Blob storage
-    - IPFS
+    - IPFS node
+    - Interface using IPFS API
 - Brownie templating
 - Reverse proxy
 - Blockchain node
