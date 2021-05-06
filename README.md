@@ -26,6 +26,8 @@ Smart contract based on:
     - IPFS node
     - Interface using IPFS API
 - Brownie templating
+    - Automated smart contract creation
+    - Automated smart contract deployment
 - Reverse proxy
 - Blockchain node
     - DapsNodeIo for production
