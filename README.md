@@ -28,6 +28,7 @@ Smart contract based on:
 - Brownie templating
     - Automated smart contract creation
     - Automated smart contract deployment
+    - graphql
 - Reverse proxy
 - Blockchain node
     - DapsNodeIo for production
