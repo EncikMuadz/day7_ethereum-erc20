@@ -2,6 +2,8 @@ FROM python:3.7
 
 WORKDIR /usr/src/app
 
-RUN pip install -U pip setuptools wheel eth-brownie
+RUN pip install -U pip setuptools wheel
 
-COPY . .
+COPY ./requirements.txt .
+
+RUN pip install -r requirements.txt
