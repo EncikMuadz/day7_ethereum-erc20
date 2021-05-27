@@ -7,10 +7,15 @@ Smart contract based on:
 
 ### Development
 - get and modify the code `DONE`
-- metamask as wallet
-- Ropsten network and ganache for development
-- compile contract using Remix IDE, deploy compiled contract to testnet `TBD`
-- verify contract before deploying ABI to the mainnet `TBD`
+- User access
+    - metamask as wallet
+- Blockchain
+    - Ropsten network and ganache
+- Smart Contract
+    - compile contract using Remix IDE, deploy compiled contract to testnet `TBD`
+    - verify contract before deploying ABI to the mainnet `TBD`
+
+### Deployment
 - buy token `TBD`
 - launch ICO page `TBD`
 
