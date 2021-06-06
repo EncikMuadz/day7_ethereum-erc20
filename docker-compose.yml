@@ -32,6 +32,17 @@ services:
         depends_on:
             - dapp-back
 
+    geth-service:
+        build:
+            context: ./ethereum
+            dockerfile: dockerfile
+        ports: 
+            - "30303:30303"
+        networks: 
+            - ethflow
+        image: ethflow-ethereum
+        container_name: ethflow_ethereum
+
 networks:
     ethflow:
         driver: bridge
