@@ -38,6 +38,7 @@ Smart contract based on:
 - Blockchain node
     - DapsNodeIo for production
     - ganache/hardhat for development
+    - geth for development/production
 - Chainlink Node:
     - Middleware between blockchain and external data
     - geth
