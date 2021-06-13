@@ -1,6 +1,7 @@
 version: "3"
 services:
     ganache:
+        container_name: ganache_ethstack
         build: ./ganache
         ports:
             - "8545:8545"
@@ -8,6 +9,7 @@ services:
             - ethflow
     
     dapp-back:
+        container_name: dapp-back_ethstack
         build: ./API
         
         command: uvicorn app:app --reload --workers 1 --host 0.0.0.0 --port 5005
@@ -22,6 +24,7 @@ services:
             - ganache
     
     dapp-front:
+        container_name: dappfront_ethstack
         build: ./client
         ports:
             - "8501:8501"
@@ -33,6 +36,7 @@ services:
             - dapp-back
 
     geth-service:
+        container_name: geth_ethstack
         build:
             context: ./ethereum
             dockerfile: dockerfile
@@ -42,6 +46,34 @@ services:
             - ethflow
         image: ethflow-ethereum
         container_name: ethflow_ethereum
+
+    db_users:
+        container_name: postgres_ethflow
+        build:
+            context: ./postgres
+            dockerfile: Dockerfile
+        image: ethflow-postgresql  
+        ports: 
+            - "5432:5432" 
+        restart: always
+        volumes:
+        - ./postgres/db_data:/var/lib/postgresql/data
+        env_file: 
+            - ./postgres/.env
+
+    db_dashboard:
+        container_name: pgadmin4_ethflow
+        build:
+            context: ./pgadmin
+            dockerfile: Dockerfile
+        image: ethflow-pgadmin4
+        restart: always
+        volumes:  
+        - ./pgadmin/pgadmin_data:/var/lib/pgadmin
+        env_file:
+          - ./pgadmin/.env
+        ports:
+          - "5050:80"    
 
 networks:
     ethflow:
