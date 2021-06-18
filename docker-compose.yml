@@ -74,6 +74,26 @@ services:
           - ./pgadmin/.env
         ports:
           - "5050:80"    
+    
+    hasura:
+        image: hasura/graphql-engine:latest.cli-migrations-v2
+        volumes:
+            - ./hasura/migrations:/hasura-migrations
+            - ./hasura/metadata:/hasura-metadata
+        container_name: blog-hasura
+        restart: always
+        depends_on:
+            - 'postgres'
+            - 'django'
+        environment:
+            HASURA_GRAPHQL_ENABLE_CONSOLE: 'true'
+            HASURA_GRAPHQL_DEV_MODE: 'true'
+            HASURA_GRAPHQL_UNAUTHORIZED_ROLE: 'public'
+            HASURA_GRAPHQL_DATABASE_URL: 'postgres://postgres:password@postgres:5432/postgres'
+            HASURA_GRAPHQL_ADMIN_SECRET: 'password'
+            HASURA_GRAPHQL_JWT_SECRET: '{ "type": "HS256", "key": "Q3d5ymmEjNBw37XQdL4xeRVvDCxgvqFrisALR4bng-0" }' # *** CHANGE THIS ***
+        ports:
+            - "8080:8080"
 
 networks:
     ethflow:
