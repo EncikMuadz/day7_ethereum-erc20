@@ -27,6 +27,7 @@ Smart contract based on:
     - create env
     - update packages - `pip install -U pip setuptools wheel`
     - Update docs
+    - django users, graphql
 - Blob storage
     - IPFS node
     - Interface using IPFS API
@@ -35,6 +36,8 @@ Smart contract based on:
     - Automated smart contract deployment
     - graphql
 - Reverse proxy
+    - Nginx
+    - traefik
 - Blockchain node
     - DapsNodeIo for production
     - ganache/hardhat for development
