@@ -45,3 +45,6 @@ Smart contract based on:
 - Chainlink Node:
     - Middleware between blockchain and external data
     - geth
+
+### TO DO
+- Investigate using openstack implementation
