@@ -48,3 +48,4 @@ Smart contract based on:
 
 ### TO DO
 - Investigate using openstack implementation
+- quantum ledger from openstack implementation
